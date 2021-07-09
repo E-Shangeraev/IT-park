@@ -1,5 +1,7 @@
 import React from 'react'
 import Button from '@components/Button/Button'
+import Title from '@components/Title/Title'
+import Slider from '@components/Slider/Slider'
 import logo from '@assets/img/logo.svg'
 
 function App() {
@@ -20,15 +22,36 @@ function App() {
             </li>
           </ul>
         </nav>
-        <Button outlined>Обратный звонок</Button>
+        <Button>Обратный звонок</Button>
       </header>
       <main>
-        <div className="wrapper">
-          <h1 className="visually-hidden">IT-парк</h1>
-          <section className="promo">
-            <h2>Промо-блок</h2>
-          </section>
-        </div>
+        <h1 className="visually-hidden">IT-парк</h1>
+        <section className="promo">
+          <div className="wrapper">
+            <div className="promo__container">
+              <Title>
+                <span>
+                  <b>ИТ-парк Сахалин</b> - место,
+                </span>
+                <span>где цифровые технологии</span>
+                <span>делают Вашу жизнь лучше</span>
+              </Title>
+            </div>
+          </div>
+        </section>
+        <section className="parallax" />
+        <section className="about">
+          <div className="wrapper">
+            <Title>
+              <span>Всё, что вам нужно </span>
+              <span>
+                знать об <b>ИТ-парке</b>
+              </span>
+              <span>в одном месте</span>
+            </Title>
+            <Slider />
+          </div>
+        </section>
       </main>
       <footer />
     </div>

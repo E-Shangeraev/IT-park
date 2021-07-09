@@ -1,0 +1,17 @@
+@import '../variables.scss';
+
+.about {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: 'О НАС';
+    font-size: 326px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $gray-3;
+    top: 0;
+    right: -5%;
+  }
+}

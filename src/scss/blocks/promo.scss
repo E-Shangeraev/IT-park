@@ -1,0 +1,9 @@
+.promo {
+  height: calc(100vh - #{$header-height});
+}
+.promo__container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}

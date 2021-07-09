@@ -1,0 +1,18 @@
+@import '../../scss/variables.scss';
+
+.button {
+  padding: 18px 45px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
+  background-color: $orange;
+  border: 1.5px solid $orange;
+  border-radius: 30px;
+  transition: ease 0.25s;
+
+  &:hover,
+  &--outlined {
+    color: $black;
+    background-color: transparent;
+  }
+}
