@@ -1,0 +1,14 @@
+@import './fonts.scss';
+@import './variables.scss';
+@import './globals.scss';
+
+// ==== Библиотеки ====
+@import '~normalize-css/normalize.css';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+// ==== Стили блоков ====
+@import './blocks/wrapper.scss';
+@import './blocks/header.scss';
+@import './blocks/footer.scss';
+@import './blocks/title.scss';
