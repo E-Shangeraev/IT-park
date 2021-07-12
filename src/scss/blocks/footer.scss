@@ -1,0 +1,14 @@
+.footer {
+  background-color: $black;
+}
+.footer__nav {
+  a {
+    font-size: 20px;
+    line-height: 284%;
+    color: #fff;
+    transition: ease 0.25s;
+  }
+  a:hover {
+    color: $orange;
+  }
+}

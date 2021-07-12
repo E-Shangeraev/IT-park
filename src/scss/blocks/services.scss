@@ -1,0 +1,23 @@
+.services {
+  position: relative;
+  background-color: $gray-3;
+
+  &::after {
+    position: absolute;
+    content: 'УСЛУГИ';
+    font-size: 326px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    top: 0;
+    right: -25%;
+  }
+
+  .title {
+    margin-bottom: 65px;
+  }
+}
+.services__list {
+  margin-bottom: 80px;
+}

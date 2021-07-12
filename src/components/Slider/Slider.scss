@@ -1,7 +1,9 @@
 @import '../../scss/variables.scss';
 
 .slider {
+  position: relative;
   margin-top: 80px;
+  height: max-content;
 
   .second {
     position: relative;
@@ -12,11 +14,12 @@
     background-color: #fff;
   }
   .slider__bottom {
-    // position: absolute;
-    transform: translateY(-50%);
+    position: relative;
     display: flex;
+    margin-bottom: 100px;
+    margin-top: -100px;
     width: 100%;
-    top: 50%;
+    height: 100%;
     left: 0;
     z-index: 2;
   }
@@ -28,10 +31,6 @@
       color: $orange;
     }
   }
-}
-.slider__container {
-  position: relative;
-  height: max-content;
 }
 .slider__buttons {
   position: absolute;
@@ -64,6 +63,22 @@
   margin-right: 15px;
 }
 .slider__switchers {
-  position: relative;
-  top: 30%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  li:last-of-type {
+    pointer-events: none;
+    width: 100px;
+  }
+  button {
+    font-size: 28px;
+    line-height: 260%;
+    white-space: nowrap;
+    transition: ease 0.25s;
+  }
+  button.active {
+    color: $orange;
+    text-decoration: underline;
+  }
 }

@@ -11,6 +11,16 @@ global.render = render
 global.mount = mount
 global.toJson = toJson
 
+window.matchMedia =
+  window.matchMedia ||
+  function () {
+    return {
+      matches: false,
+      addListener() {},
+      removeListener() {},
+    }
+  }
+
 // Fail tests on any warning
 console.error = message => {
   throw new Error(message)

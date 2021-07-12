@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component should render with props 1`] = `
+<button
+  className="button button--outlined"
+  onClick={[Function]}
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Button component should render without props 1`] = `
+<button
+  className="button"
+  onClick={[Function]}
+  type="button"
+>
+  Button
+</button>
+`;

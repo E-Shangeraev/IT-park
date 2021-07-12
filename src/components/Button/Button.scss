@@ -15,4 +15,13 @@
     color: $black;
     background-color: transparent;
   }
+  &--secondary {
+    color: $orange;
+    background-color: #fff;
+  }
+  &--secondary:hover {
+    color: #fff;
+    background-color: $orange;
+    border-color: #fff;
+  }
 }

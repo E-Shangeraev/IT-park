@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import './Button.scss'
 
-const Button = ({ type, color, outlined, children, onClick }) => (
+const Button = ({ type, outlined, color, children, onClick }) => (
   <button
     type={type}
     className={classNames('button', {
       'button--outlined': outlined,
-      'button--white': color,
+      'button--secondary': color === 'secondary',
     })}
     onClick={onClick}>
     {children}

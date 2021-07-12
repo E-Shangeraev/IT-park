@@ -24,27 +24,12 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "jest",
+    "test": "craco test",
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "verbose": true,
-    "clearMocks": true,
-    "collectCoverage": true,
-    "setupFilesAfterEnv": [
-      "./config/setupTests.js"
-    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ],
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    }
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
     ]
   },
   "browserslist": {
