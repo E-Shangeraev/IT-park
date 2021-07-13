@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import Slick from 'react-slick'
 import classNames from 'classnames'
 import './Slider.scss'
-import image1 from '@assets/img/Slider/1.jpg'
+import image1 from '../../assets/img/Slider/1.jpg'
 
 export const switchers = [
   'Комфортные рабочие места',

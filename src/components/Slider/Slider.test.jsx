@@ -1,8 +1,11 @@
 /* eslint-disable no-undef */
 import React from 'react'
+import { render, screen } from '@testing-library/react'
 import Slider, { switchers } from './Slider'
 
-const setUp = () => shallow(<Slider />)
+jest.mock('react-slick')
+
+const setUp = () => render(<Slider />)
 
 describe('Slider component', () => {
   let component

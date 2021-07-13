@@ -2,6 +2,8 @@
   background-color: $black;
 }
 .footer__nav {
+  margin-bottom: 85px;
+
   a {
     font-size: 20px;
     line-height: 284%;
@@ -11,4 +13,42 @@
   a:hover {
     color: $orange;
   }
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: 200px 300px 300px;
+  justify-content: space-between;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  & > div:nth-of-type(2) *,
+  & > div:nth-of-type(3) * {
+    font-size: 16px;
+    line-height: 150%;
+    color: #5e5557;
+  }
+  & > div:nth-of-type(2) a,
+  & > div:nth-of-type(3) a {
+    display: block;
+    color: $orange;
+  }
+}
+.footer__logo {
+  width: 175px;
+}
+.footer__socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// .footer__inn,
+// .footer__address,
+// .footer__policy span,
+// .footer__client {
+// }
+.footer__policy a {
+  text-decoration: underline;
 }

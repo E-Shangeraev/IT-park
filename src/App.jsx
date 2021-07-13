@@ -10,6 +10,7 @@ import icon2 from '@assets/img/icons/2.svg'
 import icon3 from '@assets/img/icons/3.svg'
 import partnerLogo1 from '@assets/img/2.png'
 import partnerLogo2 from '@assets/img/3.png'
+import footerLogo from '@assets/img/footer-logo.svg'
 import vk from '@assets/img/icons/vk.svg'
 import inst from '@assets/img/icons/inst.svg'
 import youtube from '@assets/img/icons/youtube.svg'
@@ -157,7 +158,11 @@ function App() {
                   </li>
                 </ul>
               </nav>
-              <img src={logo} alt="Логотип IT-парк" />
+              <img
+                className="footer__logo"
+                src={footerLogo}
+                alt="Логотип IT-парк"
+              />
             </div>
             <div>
               <span className="footer__inn">
@@ -169,41 +174,47 @@ function App() {
               </span>
               <p className="footer__policy">
                 <span>Все права защищены.</span>
-                <a href="/">Политика конфиденциальности</a>
+                <a href="/" target="_blank">
+                  Политика конфиденциальности
+                </a>
               </p>
             </div>
-          </div>
-          <div>
-            <p className="footer__client">
-              <span>Клиентский отдел</span>
-              <a href="/">info@it-park.com</a>
-            </p>
-            <p className="footer__career">
-              <span>Карьера в компании</span>
-              <a href="/">hr@it-park.com</a>
-            </p>
-            <ul className="footer__socials">
-              <li>
-                <a href="/">
-                  <img src={vk} alt="ВКонтакте" />
+            <div>
+              <p className="footer__client">
+                <span>Клиентский отдел</span>
+                <a href="/" target="_blank">
+                  info@it-park.com
                 </a>
-              </li>
-              <li>
-                <a href="/">
-                  <img src={inst} alt="Instagram" />
+              </p>
+              <p className="footer__career">
+                <span>Карьера в компании</span>
+                <a href="/" target="_blank">
+                  hr@it-park.com
                 </a>
-              </li>
-              <li>
-                <a href="/">
-                  <img src={youtube} alt="YouTube" />
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  <img src={whatsapp} alt="WhatsApp" />
-                </a>
-              </li>
-            </ul>
+              </p>
+              <ul className="footer__socials">
+                <li>
+                  <a href="/" target="_blank">
+                    <img src={vk} alt="ВКонтакте" />
+                  </a>
+                </li>
+                <li>
+                  <a href="/" target="_blank">
+                    <img src={inst} alt="Instagram" />
+                  </a>
+                </li>
+                <li>
+                  <a href="/" target="_blank">
+                    <img src={youtube} alt="YouTube" />
+                  </a>
+                </li>
+                <li>
+                  <a href="/" target="_blank">
+                    <img src={whatsapp} alt="WhatsApp" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>
