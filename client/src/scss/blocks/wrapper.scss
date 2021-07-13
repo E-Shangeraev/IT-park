@@ -1,0 +1,15 @@
+.wrapper {
+  padding: 145px 14%;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 145px 10%;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 125px 5%;
+  }
+}
