@@ -1,3 +1,6 @@
 .error {
-  color: rgb(219, 25, 25) !important;
+  &,
+  span {
+    color: rgb(219, 25, 25) !important;
+  }
 }

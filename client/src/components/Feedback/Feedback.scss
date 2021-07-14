@@ -20,34 +20,24 @@
     margin-bottom: 15px;
   }
   label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 45px;
-    font-size: 16px;
-    line-height: 160%;
-    border: 1px solid #fff;
-    border-radius: 30px;
-
-    &.valid {
-      border-color: #0f0;
-    }
+    border-color: #fff;
   }
   span {
     color: #fff;
-    flex-shrink: 0;
-    margin-right: 15px;
   }
   input {
-    width: 100%;
-    text-align: end;
-    background-color: transparent;
     color: #fff;
-    border: none;
-    outline: none;
   }
   input::placeholder {
     color: rgba(255, 255, 255, 0.6);
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $orange inset !important;
+    box-shadow: 0 0 0 30px $orange inset !important;
+    -webkit-text-fill-color: #fff !important;
   }
 }
 .feedback__container {

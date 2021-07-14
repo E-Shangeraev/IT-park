@@ -2,8 +2,9 @@
 import React, { useRef, useState } from 'react'
 import Slick from 'react-slick'
 import classNames from 'classnames'
-import './Slider.scss'
-import image1 from '../../assets/img/Slider/1.jpg'
+import SliderButton from '@components/SliderButton/SliderButton'
+import './AboutSlider.scss'
+import image1 from '@assets/img/Slider/1.jpg'
 
 export const switchers = [
   'Комфортные рабочие места',
@@ -13,7 +14,7 @@ export const switchers = [
   'Кухня',
 ]
 
-const Slider = () => {
+const AboutSlider = () => {
   const firstSliderRef = useRef()
   const secondSliderRef = useRef()
   const [active, setActive] = useState(0)
@@ -43,7 +44,7 @@ const Slider = () => {
   }
 
   return (
-    <div className="slider">
+    <div className="about-slider">
       <Slick className="first" ref={firstSliderRef} {...settings}>
         <img src={image1} alt="Комфортные рабочие места" />
         <img src={image1} alt="Комфортные рабочие места" />
@@ -51,7 +52,7 @@ const Slider = () => {
         <img src={image1} alt="Комфортные рабочие места" />
         <img src={image1} alt="Комфортные рабочие места" />
       </Slick>
-      <div className="slider__bottom">
+      <div className="about-slider__bottom">
         <Slick className="second" ref={secondSliderRef} {...settings} fade>
           <p className="second__slide">
             <b>ИТ-парк Сахалин </b>– это первая на острове деловая
@@ -84,44 +85,12 @@ const Slider = () => {
             consequatur beatae ipsa!
           </p>
         </Slick>
-        <div className="slider__buttons">
-          <button type="button" className="slider__prev" onClick={prev}>
-            Следующий слайд
-            <svg
-              width="12"
-              height="18"
-              viewBox="0 0 12 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                // eslint-disable-next-line max-len
-                d="M11.5555 2.33331L4.88888 8.99997L11.5555 15.6666L9.33332 17.8889L0.444431 8.99997L9.33332 0.111084L11.5555 2.33331Z"
-                fill="white"
-              />
-            </svg>
-          </button>
-          <button type="button" className="slider__next" onClick={next}>
-            Предыдущий слайд
-            <svg
-              width="12"
-              height="18"
-              viewBox="0 0 12 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                // eslint-disable-next-line max-len
-                d="M0.555664 15.6667L7.22233 9.00003L0.555663 2.33336L2.77789 0.111139L11.6668 9.00003L2.77789 17.8889L0.555664 15.6667Z"
-                fill="white"
-              />
-            </svg>
-          </button>
+        <div className="about-slider__buttons">
+          <SliderButton previous onClick={prev} />
+          <SliderButton next onClick={next} />
         </div>
       </div>
-      <ul className="slider__switchers">
+      <ul className="about-slider__switchers">
         {switchers.map((name, index) => (
           <li key={name}>
             <button
@@ -138,4 +107,4 @@ const Slider = () => {
   )
 }
 
-export default Slider
+export default AboutSlider

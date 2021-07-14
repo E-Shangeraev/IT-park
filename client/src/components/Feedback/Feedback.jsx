@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import { Formik, Form } from 'formik'
 import * as yup from 'yup'
+import { v4 as uuidv4 } from 'uuid'
 import Title from '@components/Title/Title'
 import Button from '@components/Button/Button'
-// import Modal from '@components/Modal/Modal'
+import Modal from '@components/Modal/Modal'
 import image from '@assets/img/4.png'
 import './Feedback.scss'
 
 const phoneRegExp =
   // eslint-disable-next-line no-useless-escape
   /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10,11}$/
+
+const formId = uuidv4()
 
 const Feedback = () => {
   const [submited, setSubmited] = useState(false)
@@ -54,7 +57,7 @@ const Feedback = () => {
             handleSubmit,
             dirty,
           }) => (
-            <Form className="feedback__form">
+            <Form className="form feedback__form">
               <div className="feedback__container">
                 <Title>
                   <span>Заполните форму ниже</span>
@@ -63,7 +66,7 @@ const Feedback = () => {
                 </Title>
                 <img src={image} alt="Изображение ноутбука" />
                 <label
-                  htmlFor="name"
+                  htmlFor={`name-${formId}`}
                   className={dirty && !errors.name ? 'valid' : null}>
                   {touched.name && errors.name ? (
                     <span className="error">{errors.name}</span>
@@ -72,7 +75,7 @@ const Feedback = () => {
                   )}
                   <input
                     type="name"
-                    id="name"
+                    id={`name-${formId}`}
                     name="name"
                     placeholder="Иван"
                     onChange={handleChange}
@@ -81,7 +84,7 @@ const Feedback = () => {
                   />
                 </label>
                 <label
-                  htmlFor="phone"
+                  htmlFor={`phone-${formId}`}
                   className={dirty && !errors.phone ? 'valid' : null}>
                   {touched.phone && errors.phone ? (
                     <span className="error">{errors.phone}</span>
@@ -90,7 +93,7 @@ const Feedback = () => {
                   )}
                   <input
                     type="phone"
-                    id="phone"
+                    id={`phone-${formId}`}
                     name="phone"
                     placeholder="+7 (999) 999-99-99"
                     onChange={handleChange}
@@ -99,7 +102,7 @@ const Feedback = () => {
                   />
                 </label>
                 <label
-                  htmlFor="email"
+                  htmlFor={`email-${formId}`}
                   className={dirty && !errors.email ? 'valid' : null}>
                   {touched.email && errors.email ? (
                     <span className="error">{errors.email}</span>
@@ -108,7 +111,7 @@ const Feedback = () => {
                   )}
                   <input
                     type="email"
-                    id="email"
+                    id={`email-${formId}`}
                     name="email"
                     placeholder="ivan@gmail.com"
                     onChange={handleChange}
@@ -123,6 +126,12 @@ const Feedback = () => {
                   disabled={!isValid && !dirty}>
                   Отправить
                 </Button>
+                <Modal active={submited} withButton={false}>
+                  <h3 className="modal__title">Спасибо за заявку!</h3>
+                  <p className="text modal__text">
+                    Мы свяжемся с вами в ближайшее время
+                  </p>
+                </Modal>
               </div>
             </Form>
           )}

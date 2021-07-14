@@ -1,9 +1,12 @@
 import React from 'react'
 import Button from '@components/Button/Button'
 import Title from '@components/Title/Title'
-import Slider from '@components/Slider/Slider'
+import AboutSlider from '@components/AboutSlider/AboutSlider'
 import Services from '@components/Services/Services'
+import NewsSlider from '@components/NewsSlider/NewsSlider'
 import Feedback from '@components/Feedback/Feedback'
+import Modal from '@components/Modal/Modal'
+import ModalFeedback from '@components/ModalFeedback'
 import logo from '@assets/img/logo.svg'
 import icon1 from '@assets/img/icons/1.svg'
 import icon2 from '@assets/img/icons/2.svg'
@@ -34,7 +37,14 @@ function App() {
             </li>
           </ul>
         </nav>
-        <Button>Обратный звонок</Button>
+
+        <Modal btnText="Обратный звонок">
+          <ModalFeedback
+            title="Это модальное окно"
+            text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Sint eius minima consequuntur suscipit quaerat incidunt."
+          />
+        </Modal>
       </header>
       <main>
         <h1 className="visually-hidden">IT-парк</h1>
@@ -52,7 +62,7 @@ function App() {
           </div>
         </section>
         <section className="parallax" />
-        <section className="about">
+        <section className="about" id="1">
           <div className="wrapper">
             <Title>
               <span>Всё, что вам нужно </span>
@@ -61,10 +71,10 @@ function App() {
               </span>
               <span>в одном месте</span>
             </Title>
-            <Slider />
+            <AboutSlider />
           </div>
         </section>
-        <section className="services">
+        <section className="services" id="2">
           <div className="wrapper">
             <Title>
               <span>Услуги, которые </span>
@@ -102,7 +112,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="partners">
+        <section className="partners" id="3">
           <div className="wrapper">
             <Title>
               <span>
@@ -137,6 +147,16 @@ function App() {
                 </a>
               </li>
             </ul>
+          </div>
+        </section>
+        <section className="news">
+          <div className="wrapper">
+            <Title>
+              <span>
+                Новости <b>ИТ-парка</b>
+              </span>
+            </Title>
+            <NewsSlider />
           </div>
         </section>
         <Feedback />

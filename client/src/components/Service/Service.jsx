@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Button from '@components/Button/Button'
+import Modal from '@components/Modal/Modal'
+import ModalFeedback from '@components/ModalFeedback'
 import './Service.scss'
 
 const Service = ({ name, subtitle, description }) => {
@@ -50,7 +51,13 @@ const Service = ({ name, subtitle, description }) => {
         <p>
           <span>{subtitle}:</span> <span className="orange">{description}</span>
         </p>
-        <Button>Оставить заявку</Button>
+        <Modal btnText="Обратный звонок">
+          <ModalFeedback
+            title="Это модальное окно"
+            text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Sint eius minima consequuntur suscipit quaerat incidunt."
+          />
+        </Modal>
       </div>
     </li>
   )
