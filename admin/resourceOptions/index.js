@@ -1,7 +1,7 @@
 const Admin = require('./admin')
-const Subject = require('./subjects')
+const News = require('./news')
 
 module.exports = {
   Admin,
-  Subject,
+  News,
 }

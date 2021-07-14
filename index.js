@@ -9,7 +9,7 @@ require('dotenv').config()
 const app = express()
 
 // ==== Routes ====
-const { buildAdminRouter, mailRouter } = require('./routes')
+const { buildAdminRouter, mailRouter, newsRouter } = require('./routes')
 
 // ==== Admin options ====
 const admin = new AdminBro(options)
@@ -21,6 +21,7 @@ app.use(express.json({ extended: true }))
 // ==== API ====
 app.use(admin.options.rootPath, adminRouter)
 app.use('/api/mail', mailRouter)
+app.use('/api/news', newsRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {
@@ -33,14 +34,14 @@ if (process.env.NODE_ENV === 'production') {
 
 // ==== App Start ====
 const PORT = process.env.PORT || 5000
-// const MONGO_URI = process.env.MONGO_URI
+const MONGO_URI = process.env.MONGO_URI
 
 const start = async () => {
   try {
-    // await mongoose.connect(MONGO_URI, {
-    //   useNewUrlParser: true,
-    //   useUnifiedTopology: true,
-    // })
+    await mongoose.connect(MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
 
     app.listen(PORT, () => console.log(`App has been started on port ${PORT}`))
   } catch (err) {
