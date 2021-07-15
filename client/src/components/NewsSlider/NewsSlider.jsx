@@ -4,12 +4,6 @@ import Slick from 'react-slick'
 import { v4 as uuidv4 } from 'uuid'
 import SliderButton from '@components/SliderButton/SliderButton'
 import './NewsSlider.scss'
-import image1 from './1.jpg'
-import image2 from './2.jpg'
-import image3 from './3.jpg'
-import image4 from './4.jpg'
-
-const images = [image1, image2, image3, image4]
 
 const NewsSlider = () => {
   const sliderRef = useRef()
@@ -43,11 +37,11 @@ const NewsSlider = () => {
     <div className="news-slider">
       <Slick className="first" ref={sliderRef} {...settings}>
         {items.length &&
-          items.map((slide, index) => (
+          items.map(slide => (
             <div className="news-slider__slide" key={uuidv4()}>
               <img
                 className="news-slider__image"
-                src={images[index]}
+                src={slide.image}
                 alt={slide.title}
               />
               <h4 className="news-slider__title">{slide.title}</h4>

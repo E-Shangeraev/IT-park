@@ -6,6 +6,8 @@ require('dotenv').config()
 const { Admin } = require('./resourceOptions')
 const NewsOptions = require('./resourceOptions')
 const News = require('../models/News')
+const Contacts = require('../models/Contacts')
+const ContactsOptions = require('./resourceOptions')
 
 const region = process.env.AWSRegion
 const bucket = process.env.AWSBucket
@@ -50,6 +52,7 @@ const options = {
       labels: {
         Admin: 'Администраторы',
         News: 'Новости',
+        Contacts: 'Контактные данные',
       },
       buttons: {
         filter: 'Фильтр',
@@ -64,10 +67,20 @@ const options = {
             date: 'Дата публикации',
           },
         },
+        Contacts: {
+          properties: {
+            phone: 'Номер телефона',
+            mail: 'Почта',
+          },
+        },
       },
     },
   },
-  resources: [Admin, { resource: News, options: NewsOptions }],
+  resources: [
+    Admin,
+    { resource: News, options: NewsOptions, features },
+    { resource: Contacts, options: ContactsOptions },
+  ],
   branding: {
     companyName: 'IT-парк',
     logo: '',

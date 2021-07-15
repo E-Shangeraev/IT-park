@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '@components/Button/Button'
 import Title from '@components/Title/Title'
 import AboutSlider from '@components/AboutSlider/AboutSlider'
@@ -20,6 +20,15 @@ import youtube from '@assets/img/icons/youtube.svg'
 import whatsapp from '@assets/img/icons/whatsapp.svg'
 
 function App() {
+  const [phone, setPhone] = useState(null)
+  const [mail, setMail] = useState(null)
+
+  useEffect(async () => {
+    const contacts = await fetch('/api/contacts').then(data => data.json())
+    setPhone(contacts[0].phone)
+    setMail(contacts[0].mail)
+  }, [])
+
   return (
     <div className="App">
       <header className="header">
@@ -189,8 +198,8 @@ function App() {
                 ООО “ИТ-парк” ИНН 000000000000
               </span>
               <span className="footer__address">
-                Офис в г. Сахалин ул. Пушкина 31а, оф. 501 тел: +7 (391)
-                000-00-00 пн-пт с 9:00 до 18:00
+                Офис в г. Сахалин ул. Пушкина 31а, оф. 501 тел:
+                {phone || null} пн-пт с 9:00 до 18:00
               </span>
               <p className="footer__policy">
                 <span>Все права защищены.</span>
@@ -202,9 +211,7 @@ function App() {
             <div>
               <p className="footer__client">
                 <span>Клиентский отдел</span>
-                <a href="/" target="_blank">
-                  info@it-park.com
-                </a>
+                {mail && <a href={`mailto:${mail}`}>{mail}</a>}
               </p>
               <p className="footer__career">
                 <span>Карьера в компании</span>
