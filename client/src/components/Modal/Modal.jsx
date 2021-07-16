@@ -6,7 +6,15 @@ import Button from '@components/Button/Button'
 import './Modal.scss'
 
 const Modal = React.memo(
-  ({ btnText, btnColor, children, containerClass, withButton, active }) => {
+  ({
+    btnText,
+    btnColor,
+    btnOutlined,
+    children,
+    containerClass,
+    withButton,
+    active,
+  }) => {
     const modalRef = useRef()
     const [open, setOpen] = useState(active)
 
@@ -38,7 +46,7 @@ const Modal = React.memo(
     return (
       <>
         {withButton && (
-          <Button color={btnColor} onClick={handleOpen}>
+          <Button color={btnColor} onClick={handleOpen} outlined={btnOutlined}>
             {btnText}
           </Button>
         )}
@@ -77,6 +85,7 @@ Modal.propTypes = {
   withButton: PropTypes.bool,
   btnText: PropTypes.string,
   btnColor: PropTypes.string,
+  btnOutlined: PropTypes.bool,
   children: PropTypes.node,
   containerClass: PropTypes.string,
 }
@@ -86,6 +95,7 @@ Modal.defaultProps = {
   withButton: true,
   btnText: 'Открыть',
   btnColor: null,
+  btnOutlined: false,
   children: null,
   containerClass: null,
 }

@@ -1,7 +1,7 @@
 @import '../../scss/variables.scss';
 
 .news-slider {
-  margin-top: 55px;
+  margin-top: 65px;
 
   .slick-track {
     display: grid;
@@ -47,5 +47,33 @@
 
   .slider-button--prev {
     margin-right: 15px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .news-slider__image,
+  .news-slider__title,
+  .news-slider__text {
+    margin-bottom: 15px;
+  }
+  .news-slider__buttons {
+    margin-top: 25px;
+  }
+  .news-slider__title {
+    font-size: 20px;
+  }
+  .news-slider__date,
+  .news-slider__text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1200px) {
+  .news-slider {
+    margin-top: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .news-slider__title {
+    font-size: 18px;
   }
 }

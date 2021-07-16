@@ -44,11 +44,40 @@
   justify-content: space-between;
   align-items: center;
 }
-// .footer__inn,
-// .footer__address,
-// .footer__policy span,
-// .footer__client {
-// }
 .footer__policy a {
   text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+
+    & > div:nth-of-type(2) {
+      grid-row: 3 / 4;
+    }
+  }
+  .footer__logo {
+    order: -1;
+    margin-bottom: 25px;
+  }
+  .footer__nav {
+    margin-bottom: 0;
+  }
+  .footer__client,
+  .footer__career {
+    margin-bottom: 25px;
+  }
+  .footer__socials {
+    width: 50%;
+  }
+  .footer__inn,
+  .footer__address {
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .footer__socials {
+    width: 100%;
+  }
 }

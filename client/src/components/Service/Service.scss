@@ -82,14 +82,28 @@
     font-size: 18;
   }
 }
+@media (max-width: 900px) {
+  .service__description {
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   .service__name {
-    padding-left: 0;
-    padding-right: 0;
+    // padding-left: 0;
+    // padding-right: 0;
 
     & > span {
       font-size: 16px;
     }
+  }
+  .service__description {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .service__name {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
   }
 }
 @media (max-width: 500px) {
@@ -98,6 +112,9 @@
   }
   .service__arrow > span {
     display: none;
+  }
+  .service__description {
+    font-size: 12px;
   }
 }
 @media (max-width: 320px) {

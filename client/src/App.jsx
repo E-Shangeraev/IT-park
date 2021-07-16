@@ -8,6 +8,8 @@ import Feedback from '@components/Feedback/Feedback'
 import Modal from '@components/Modal/Modal'
 import ModalFeedback from '@components/ModalFeedback'
 import logo from '@assets/img/logo.svg'
+import promoBG from '@assets/img/promo-bg.png'
+import parallax from '@assets/img/1.jpg'
 import icon1 from '@assets/img/icons/1.svg'
 import icon2 from '@assets/img/icons/2.svg'
 import icon3 from '@assets/img/icons/3.svg'
@@ -32,48 +34,69 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <img className="header__logo" src={logo} alt="Логотип IT-парк" />
-        <nav className="header__nav">
-          <ul>
-            <li>
-              <a href="#1">О нас</a>
-            </li>
-            <li>
-              <a href="#2">Услуги</a>
-            </li>
-            <li>
-              <a href="#3">Партнеры</a>
-            </li>
-          </ul>
-        </nav>
-
-        <Modal btnText="Обратный звонок">
-          <ModalFeedback
-            title="Это модальное окно"
-            text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <div>
+          <img className="header__logo" src={logo} alt="Логотип IT-парк" />
+          <nav className="header__nav">
+            <ul>
+              <li>
+                <a href="#1">О нас</a>
+              </li>
+              <li>
+                <a href="#2">Услуги</a>
+              </li>
+              <li>
+                <a href="#3">Партнеры</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <Modal btnText="Обратный звонок" btnOutlined>
+            <ModalFeedback
+              title="Это модальное окно"
+              text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Sint eius minima consequuntur suscipit quaerat incidunt."
-          />
-        </Modal>
+            />
+          </Modal>
+        </div>
       </header>
       <main>
         <h1 className="visually-hidden">IT-парк</h1>
         <section className="promo">
-          <div className="wrapper">
-            <div className="promo__container">
+          <div className="promo__container">
+            <div className="wrapper">
               <Title>
                 <span>
                   <b>ИТ-парк Сахалин</b> - место,
                 </span>
                 <span>где цифровые технологии</span>
-                <span>делают Вашу жизнь лучше</span>
+                <span>делают жизнь лучше</span>
               </Title>
+              <div className="promo__bottom">
+                <Modal btnText="Стать участником">
+                  <ModalFeedback
+                    title="Это модальное окно"
+                    text="Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit. Sint eius minima consequuntur
+                  suscipit quaerat incidunt."
+                  />
+                </Modal>
+                <p>
+                  Это первое на острове пространство
+                  <br />
+                  в&nbsp;сфере высоких технологий
+                </p>
+              </div>
             </div>
+            <div className="promo__bg" />
           </div>
         </section>
-        <section className="parallax" />
+        <section className="parallax">
+          <img src={parallax} alt="Make IT great again" />
+        </section>
         <section className="about" id="1">
           <div className="wrapper">
-            <Title>
+            <Title aura>
               <span>Всё, что вам нужно </span>
               <span>
                 знать об <b>ИТ-парке</b>
@@ -85,7 +108,7 @@ function App() {
         </section>
         <section className="services" id="2">
           <div className="wrapper">
-            <Title>
+            <Title aura>
               <span>Услуги, которые </span>
               <span>
                 предоставляет <b>ИТ-парк</b>
@@ -96,34 +119,34 @@ function App() {
             <div className="how-to">
               <div className="how-to__container">
                 <h3 className="subtitle">Как забронировать рабочее место</h3>
+                <ul className="how-to__steps">
+                  <li>
+                    <img src={icon1} alt="Иконка ярлыка с надписью free" />
+                    <p>
+                      узнать о наличии свободных мест (по телефону, почте,
+                      лично, Instagram)
+                    </p>
+                  </li>
+                  <li>
+                    <img
+                      src={icon2}
+                      alt="Иконка с человеком, отвечающим на вопросы"
+                    />
+                    <p>заполнить анкету, ответив на все необходимые вопросы</p>
+                  </li>
+                  <li>
+                    <img src={icon3} alt="Иконка кошелька" />
+                    <p>заключить договор аренды и оплатить первый месяц</p>
+                  </li>
+                </ul>
                 <Button>Узнать о наличии мест</Button>
               </div>
-              <ul className="how-to__steps">
-                <li>
-                  <img src={icon1} alt="Иконка ярлыка с надписью free" />
-                  <p>
-                    узнать о наличии свободных мест (по телефону, почте, лично,
-                    Instagram)
-                  </p>
-                </li>
-                <li>
-                  <img
-                    src={icon2}
-                    alt="Иконка с человеком, отвечающим на вопросы"
-                  />
-                  <p>заполнить анкету, ответив на все необходимые вопросы</p>
-                </li>
-                <li>
-                  <img src={icon3} alt="Иконка кошелька" />
-                  <p>заключить договор аренды и оплатить первый месяц</p>
-                </li>
-              </ul>
             </div>
           </div>
         </section>
         <section className="partners" id="3">
           <div className="wrapper">
-            <Title>
+            <Title aura>
               <span>
                 Партнеры <b>ИТ-парка</b>,
               </span>
@@ -160,7 +183,7 @@ function App() {
         </section>
         <section className="news">
           <div className="wrapper">
-            <Title>
+            <Title aura>
               <span>
                 Новости <b>ИТ-парка</b>
               </span>

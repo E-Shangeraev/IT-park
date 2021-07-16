@@ -1,11 +1,22 @@
 .how-to {
-  padding: 60px 7.3%;
+  padding: 4.4% 7.3%;
   background-color: #fff;
 }
 .how-to__container {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
+
+  .subtitle {
+    // margin: 0;
+  }
+  .button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 .how-to__steps {
   display: flex;
@@ -29,11 +40,21 @@
 }
 
 @media (max-width: 1200px) {
-  .how-to__container {
-    display: block;
-  }
   .how-to__steps li p {
     font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
+  .how-to__container {
+    align-items: center;
+
+    .subtitle {
+      margin: 0;
+    }
+    .button {
+      position: relative;
+      margin-top: 50px;
+    }
   }
 }
 @media (max-width: 768px) {

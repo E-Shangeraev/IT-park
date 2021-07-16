@@ -2,7 +2,7 @@
 
 .about-slider {
   position: relative;
-  margin-top: 80px;
+  margin-top: 65px;
   height: max-content;
 }
 .about-slider__bottom {
@@ -65,8 +65,11 @@
 }
 
 @media (max-width: 1200px) {
+  .about-slider {
+    margin-top: 35px;
+  }
   .about-slider__bottom {
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
   }
   .second__slide {
     font-size: 16px;
@@ -80,7 +83,7 @@
     left: 60px;
   }
   .second__slide {
-    font-size: 16px;
+    font-size: 14px;
   }
   .about-slider__switchers button {
     font-size: 20px;
@@ -118,7 +121,7 @@
     margin-bottom: 40px;
   }
   .second__slide {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 @media (max-width: 320px) {

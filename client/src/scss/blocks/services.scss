@@ -14,12 +14,9 @@
     right: -25%;
     z-index: 0;
   }
-
-  .title {
-    margin-bottom: 65px;
-  }
 }
 .services__list {
+  margin-top: 65px;
   margin-bottom: 80px;
 }
 
@@ -30,6 +27,9 @@
   }
 }
 @media (max-width: 1200px) {
+  .services__list {
+    margin-top: 35px;
+  }
   .services::after {
     font-size: 280px;
   }
@@ -47,9 +47,18 @@
   }
 }
 @media (max-width: 768px) {
+  .services .title {
+    // margin-bottom: 25px;
+  }
   .services::after {
     font-size: 180px;
     right: -45%;
+  }
+}
+@media (max-width: 600px) {
+  .services::after {
+    font-size: 150px;
+    right: -50%;
   }
 }
 @media (max-width: 500px) {
