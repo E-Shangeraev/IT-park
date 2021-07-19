@@ -17,18 +17,17 @@ const formId = uuidv4()
 const Feedback = () => {
   const [submited, setSubmited] = useState(false)
 
+  const afterSubmit = () => setSubmited(false)
+
   const validationSchema = yup.object().shape({
     name: yup
       .string()
-      .min(2, 'Имя может содержать не менее 2 символов')
-      .max(50, 'Имя может содержать не более 50 символов')
-      .typeError('Имя может содержать только буквы')
-      .required('Укажите имя'),
-    phone: yup
-      .string()
-      .matches(phoneRegExp, 'Некорректный номер телефона')
-      .required('Укажите номер телефона'),
-    email: yup.string().email('Некорректный email').required('Укажите email'),
+      .min(2, 'Имя')
+      .max(50, 'Имя')
+      .typeError('Имя')
+      .required('Имя'),
+    phone: yup.string().matches(phoneRegExp, 'Телефон').required('Телефон'),
+    email: yup.string().email('E-mail').required('E-mail'),
   })
 
   return (
@@ -89,7 +88,7 @@ const Feedback = () => {
                   {touched.phone && errors.phone ? (
                     <span className="error">{errors.phone}</span>
                   ) : (
-                    <span>Ваш телефон</span>
+                    <span>Телефон</span>
                   )}
                   <input
                     type="phone"
@@ -107,7 +106,7 @@ const Feedback = () => {
                   {touched.email && errors.email ? (
                     <span className="error">{errors.email}</span>
                   ) : (
-                    <span>Ваше e-mail</span>
+                    <span>E-mail</span>
                   )}
                   <input
                     type="email"
@@ -126,7 +125,10 @@ const Feedback = () => {
                   disabled={!isValid && !dirty}>
                   Отправить
                 </Button>
-                <Modal active={submited} withButton={false}>
+                <Modal
+                  active={submited}
+                  withButton={false}
+                  callback={afterSubmit}>
                   <h3 className="modal__title">Спасибо за заявку!</h3>
                   <p className="text modal__text">
                     Мы свяжемся с вами в ближайшее время

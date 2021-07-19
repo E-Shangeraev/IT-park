@@ -8,6 +8,9 @@
     color: #000;
     outline: none;
   }
+  input::placeholder {
+    color: #ccc !important;
+  }
   label {
     display: flex;
     align-items: center;
@@ -15,7 +18,7 @@
     padding: 18px 45px;
     font-size: 16px;
     line-height: 160%;
-    border: 1px solid #000;
+    border: 1px solid $gray-2;
     border-radius: 30px;
 
     &.valid {
@@ -61,19 +64,57 @@
 
 @media (max-width: 1366px) {
   .form {
-    input,
-    textarea {
+    label,
+    input {
       font-size: 16px;
     }
   }
 }
+@media (max-width: 1024px) {
+  .form {
+    label,
+    input {
+      font-size: 14px;
+    }
+    label {
+      padding: 15px 45px;
+    }
+    [type='checkbox'] + label {
+      padding: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  [type='checkbox'] + label {
+    width: 100%;
+  }
+}
 @media (max-width: 500px) {
   .form {
-    & > input,
-    textarea,
+    label {
+      padding: 10px 25px;
+    }
+    label,
+    input,
     button {
-      font-size: 14px;
-      margin-bottom: 20px;
+      font-size: 12px;
+    }
+    [type='checkbox'] + label {
+      padding: 0;
+
+      * {
+        font-size: 12px;
+      }
+    }
+  }
+  .form__agreement label {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .form {
+    label {
+      padding: 10px 15px;
     }
   }
   .form__agreement label {

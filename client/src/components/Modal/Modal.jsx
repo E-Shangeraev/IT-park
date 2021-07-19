@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Transition } from 'react-transition-group'
 import PropTypes from 'prop-types'
-import Portal from '@components/Portal'
-import Button from '@components/Button/Button'
+import Portal from '../Portal'
+import Button from '../Button/Button'
 import './Modal.scss'
 
 const Modal = React.memo(
@@ -14,22 +14,26 @@ const Modal = React.memo(
     containerClass,
     withButton,
     active,
+    callback,
   }) => {
     const modalRef = useRef()
     const [open, setOpen] = useState(active)
+
+    const handleClose = () => {
+      setOpen(false)
+      callback()
+    }
+    const handleOpen = () => setOpen(true)
 
     const handleOutsideClick = useCallback(
       e => {
         const path = e.path || (e.composedPath && e.composedPath())
         if (path[0] === modalRef.current) {
-          setOpen(false)
+          handleClose()
         }
       },
       [open]
     )
-
-    const handleClose = () => setOpen(false)
-    const handleOpen = () => setOpen(true)
 
     useEffect(() => {
       if (open) {
@@ -88,6 +92,7 @@ Modal.propTypes = {
   btnOutlined: PropTypes.bool,
   children: PropTypes.node,
   containerClass: PropTypes.string,
+  callback: PropTypes.func,
 }
 
 Modal.defaultProps = {
@@ -98,6 +103,7 @@ Modal.defaultProps = {
   btnOutlined: false,
   children: null,
   containerClass: null,
+  callback: () => {},
 }
 
 export default Modal

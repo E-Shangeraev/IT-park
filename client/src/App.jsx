@@ -6,7 +6,7 @@ import Services from '@components/Services/Services'
 import NewsSlider from '@components/NewsSlider/NewsSlider'
 import Feedback from '@components/Feedback/Feedback'
 import Modal from '@components/Modal/Modal'
-import ModalFeedback from '@components/ModalFeedback'
+import ModalFeedback from '@components/Modal/ModalFeedback'
 import logo from '@assets/img/logo.svg'
 import promoBG from '@assets/img/promo-bg.png'
 import parallax from '@assets/img/1.jpg'
@@ -139,7 +139,14 @@ function App() {
                     <p>заключить договор аренды и оплатить первый месяц</p>
                   </li>
                 </ul>
-                <Button>Узнать о наличии мест</Button>
+                <Modal btnText="Узнать о наличии мест">
+                  <ModalFeedback
+                    title="Это модальное окно"
+                    text="Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit. Sint eius minima consequuntur
+                  suscipit quaerat incidunt."
+                  />
+                </Modal>
               </div>
             </div>
           </div>
@@ -155,7 +162,10 @@ function App() {
             </Title>
             <ul className="partners__list">
               <li>
-                <a href="/">
+                <a
+                  href="https://sakhalin.gov.ru/"
+                  target="_blank"
+                  rel="noreferrer">
                   <img
                     src={partnerLogo1}
                     alt="Правительство Сахалинской области"
@@ -167,7 +177,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://korpso.ru/" target="_blank" rel="noreferrer">
                   <img
                     src={partnerLogo2}
                     alt="Корпорация развития Сахалинской области"
@@ -249,7 +259,11 @@ function App() {
                   </a>
                 </li>
                 <li>
-                  <a href="/" target="_blank">
+                  <a
+                    // eslint-disable-next-line max-len
+                    href="https://vk.com/away.php?utf=1&to=https%3A%2F%2Finstagram.com%2Fit_park_sakhalin%3Futm_medium%3Dcopy_link"
+                    target="_blank"
+                    rel="noreferrer">
                     <img src={inst} alt="Instagram" />
                   </a>
                 </li>

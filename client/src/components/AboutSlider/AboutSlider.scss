@@ -68,9 +68,6 @@
   .about-slider {
     margin-top: 35px;
   }
-  .about-slider__bottom {
-    // margin-bottom: 80px;
-  }
   .second__slide {
     font-size: 16px;
   }
@@ -117,8 +114,27 @@
       margin-bottom: 1.5em;
     }
   }
+  .about-slider .first {
+    .slick-slide {
+      img {
+        object-fit: cover;
+        height: 100% !important;
+        height: 30vh !important;
+      }
+    }
+  }
   .about-slider__bottom {
+    display: block;
+    margin-top: 0;
     margin-bottom: 40px;
+
+    .second {
+      width: 100%;
+    }
+  }
+  .about-slider__buttons {
+    position: relative;
+    margin: 0;
   }
   .second__slide {
     font-size: 12px;

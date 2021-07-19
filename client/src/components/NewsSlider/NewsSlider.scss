@@ -71,9 +71,17 @@
   .news-slider {
     margin-top: 35px;
   }
+  .news-slider__slide {
+    padding: 0 10px !important;
+  }
 }
 @media (max-width: 768px) {
   .news-slider__title {
     font-size: 18px;
+  }
+}
+@media (max-width: 500px) {
+  .news-slider__slide {
+    padding: 0 5px !important;
   }
 }

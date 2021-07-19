@@ -3,7 +3,7 @@ import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
-import Button from '@components/Button/Button'
+import Button from '../Button/Button'
 
 const phoneRegExp =
   // eslint-disable-next-line no-useless-escape
@@ -17,15 +17,12 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
   const validationSchema = yup.object().shape({
     name: yup
       .string()
-      .min(2, 'Некорректное имя')
-      .max(50, 'Некорректное имя')
-      .typeError('Имя может содержать только буквы')
-      .required('Укажите имя'),
-    phone: yup
-      .string()
-      .matches(phoneRegExp, 'Некорректный номер телефона')
-      .required('Укажите номер телефона'),
-    email: yup.string().email('Некорректный email').required('Укажите email'),
+      .min(2, 'Имя')
+      .max(50, 'Имя')
+      .typeError('Имя')
+      .required('Имя'),
+    phone: yup.string().matches(phoneRegExp, 'Телефон').required('Телефон'),
+    email: yup.string().email('E-mail').required('E-mail'),
     agreement: yup
       .bool()
       .oneOf([true], 'Accept Terms & Conditions is required'),
@@ -68,7 +65,7 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
               handleSubmit,
               dirty,
             }) => (
-              <form className="form modal__form">
+              <form className="form modal__form" aria-label="form">
                 <label
                   htmlFor={`name-${formId}`}
                   className={dirty && !errors.name ? 'valid' : null}>
@@ -111,7 +108,7 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
                   {touched.email && errors.email ? (
                     <span className="error">{errors.email}</span>
                   ) : (
-                    <span>Ваше e-mail</span>
+                    <span>E-mail</span>
                   )}
                   <input
                     type="email"
@@ -131,6 +128,7 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
                 </Button>
                 <div className="form__agreement">
                   <Field
+                    className="checkbox"
                     type="checkbox"
                     id={`checkbox-${formId}`}
                     name="agreement"

@@ -27,7 +27,7 @@
     color: #fff;
   }
   input {
-    color: #fff;
+    color: #fff !important;
   }
   input::placeholder {
     color: rgba(255, 255, 255, 0.6);
@@ -80,6 +80,7 @@
       'phone phone'
       'email email'
       'button button';
+    grid-column-gap: 0;
   }
   .feedback {
     .title {
@@ -133,6 +134,8 @@
     display: none;
   }
   .feedback__container {
+    grid-row-gap: 20px;
+
     .title {
       font-size: 20px;
     }

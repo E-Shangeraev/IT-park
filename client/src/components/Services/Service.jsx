@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Modal from '@components/Modal/Modal'
-import ModalFeedback from '@components/ModalFeedback'
+import Modal from '../Modal/Modal'
+import ModalFeedback from '../Modal/ModalFeedback'
 import './Service.scss'
 
 const Service = ({ name, subtitle, description }) => {

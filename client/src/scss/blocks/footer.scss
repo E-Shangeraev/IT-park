@@ -34,6 +34,11 @@
   & > div:nth-of-type(3) a {
     display: block;
     color: $orange;
+    transition: ease 0.25s;
+
+    &:hover {
+      color: #fff;
+    }
   }
 }
 .footer__logo {
@@ -76,8 +81,31 @@
     margin-bottom: 25px;
   }
 }
+@media (max-width: 1024px) {
+  .footer__nav a {
+    font-size: 18px;
+  }
+  .footer__container {
+    & > div:nth-of-type(2) *,
+    & > div:nth-of-type(3) * {
+      font-size: 14px;
+    }
+  }
+}
 @media (max-width: 500px) {
   .footer__socials {
     width: 100%;
+  }
+  .footer__logo {
+    width: 140px;
+  }
+  .footer__nav a {
+    font-size: 16px;
+  }
+  .footer__container {
+    & > div:nth-of-type(2) *,
+    & > div:nth-of-type(3) * {
+      font-size: 12px;
+    }
   }
 }
