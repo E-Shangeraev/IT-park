@@ -53,9 +53,9 @@ function App() {
         <div>
           <Modal btnText="Обратный звонок" btnOutlined>
             <ModalFeedback
-              title="Это модальное окно"
-              text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Sint eius minima consequuntur suscipit quaerat incidunt."
+              title="IT-парк на связи"
+              text="Оставьте свои контактные данные
+              и мы обязательно свяжемся с вами"
             />
           </Modal>
         </div>
@@ -75,10 +75,9 @@ function App() {
               <div className="promo__bottom">
                 <Modal btnText="Стать участником">
                   <ModalFeedback
-                    title="Это модальное окно"
-                    text="Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit. Sint eius minima consequuntur
-                  suscipit quaerat incidunt."
+                    title="IT-парк на связи"
+                    text="Оставьте свои контактные данные
+                    и мы обязательно свяжемся с вами"
                   />
                 </Modal>
                 <p>
@@ -141,10 +140,9 @@ function App() {
                 </ul>
                 <Modal btnText="Узнать о наличии мест">
                   <ModalFeedback
-                    title="Это модальное окно"
-                    text="Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit. Sint eius minima consequuntur
-                  suscipit quaerat incidunt."
+                    title="IT-парк на связи"
+                    text="Оставьте свои контактные данные
+                    и мы обязательно свяжемся с вами"
                   />
                 </Modal>
               </div>
