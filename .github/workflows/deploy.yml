@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /var/www/itpark-sakhgu.ru
+            cd /var/www/itpark-sakhalin.ru
             git pull origin master -Xtheirs
             npm install
             npm run client:install
