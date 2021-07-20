@@ -11,7 +11,8 @@
   input::placeholder {
     color: #ccc !important;
   }
-  label {
+  label,
+  textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,6 +38,10 @@
     color: #000;
     border: none;
     outline: none;
+  }
+  textarea {
+    border-radius: 25px;
+    resize: none;
   }
   input::placeholder {
     color: rgba(255, 255, 255, 0.6);
@@ -65,7 +70,8 @@
 @media (max-width: 1366px) {
   .form {
     label,
-    input {
+    input,
+    textarea {
       font-size: 16px;
     }
   }
@@ -73,10 +79,12 @@
 @media (max-width: 1024px) {
   .form {
     label,
-    input {
+    input,
+    textarea {
       font-size: 14px;
     }
-    label {
+    label,
+    textarea {
       padding: 15px 45px;
     }
     [type='checkbox'] + label {
@@ -91,12 +99,14 @@
 }
 @media (max-width: 500px) {
   .form {
-    label {
+    label,
+    textarea {
       padding: 10px 25px;
     }
     label,
     input,
-    button {
+    button,
+    textarea {
       font-size: 12px;
     }
     [type='checkbox'] + label {
@@ -113,7 +123,8 @@
 }
 @media (max-width: 320px) {
   .form {
-    label {
+    label,
+    textarea {
       padding: 10px 15px;
     }
   }

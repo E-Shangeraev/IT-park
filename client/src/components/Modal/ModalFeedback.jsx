@@ -23,6 +23,7 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
       .required('Имя'),
     phone: yup.string().matches(phoneRegExp, 'Телефон').required('Телефон'),
     email: yup.string().email('E-mail').required('E-mail'),
+    text: yup.string(),
     agreement: yup
       .bool()
       .oneOf([true], 'Accept Terms & Conditions is required'),
@@ -120,6 +121,14 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
                     value={values.email}
                   />
                 </label>
+                <textarea
+                  id={`text-${formId}`}
+                  name="text"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.text}
+                  placeholder="Ваш вопрос"
+                />
                 <Button
                   type="submit"
                   onClick={handleSubmit}
