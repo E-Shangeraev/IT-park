@@ -5,7 +5,7 @@ import Modal from '../Modal/Modal'
 import ModalFeedback from '../Modal/ModalFeedback'
 import './Service.scss'
 
-const Service = ({ name, subtitle, description }) => {
+const Service = ({ name, description }) => {
   const [toggleService, setToggleService] = useState(false)
   const serviceRef = useRef()
 
@@ -49,7 +49,7 @@ const Service = ({ name, subtitle, description }) => {
       </button>
       <div className="service__description" ref={serviceRef}>
         <p>
-          <span>{subtitle}:</span> <span className="orange">{description}</span>
+          <span>{description}</span>
         </p>
         <Modal btnText="Обратный звонок">
           <ModalFeedback
@@ -65,7 +65,6 @@ const Service = ({ name, subtitle, description }) => {
 
 Service.propTypes = {
   name: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 }
 
