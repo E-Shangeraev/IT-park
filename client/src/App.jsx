@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Button from '@components/Button/Button'
 import Title from '@components/Title/Title'
 import AboutSlider from '@components/AboutSlider/AboutSlider'
 import Services from '@components/Services/Services'
@@ -8,7 +7,6 @@ import Feedback from '@components/Feedback/Feedback'
 import Modal from '@components/Modal/Modal'
 import ModalFeedback from '@components/Modal/ModalFeedback'
 import logo from '@assets/img/logo.svg'
-import promoBG from '@assets/img/promo-bg.png'
 import parallax from '@assets/img/1.jpg'
 import icon1 from '@assets/img/icons/1.svg'
 import icon2 from '@assets/img/icons/2.svg'
@@ -23,12 +21,14 @@ import whatsapp from '@assets/img/icons/whatsapp.svg'
 
 function App() {
   const [phone, setPhone] = useState(null)
-  const [mail, setMail] = useState(null)
+  const [clientMail, setClientMail] = useState(null)
+  const [careerMail, setCareerMail] = useState(null)
 
   useEffect(async () => {
     const contacts = await fetch('/api/contacts').then(data => data.json())
     setPhone(contacts[0].phone)
-    setMail(contacts[0].mail)
+    setClientMail(contacts[0].clientMail)
+    setCareerMail(contacts[0].careerMail)
   }, [])
 
   return (
@@ -221,27 +221,41 @@ function App() {
                 ООО “ИТ-парк” ИНН 000000000000
               </span>
               <span className="footer__address">
-                Офис в г. Сахалин ул. Пушкина 31а, оф. 501 тел:
-                {phone || null} пн-пт с 9:00 до 18:00
+                г. Южно-Сахалинск
+                <br />
+                ул. Алексея Горького 25
+                {phone && (
+                  <>
+                    <br />
+                    <a href={`tel:${phone}`}>тел: {phone}</a>
+                  </>
+                )}
+                пн-пт с 9:00 до 19:00
+                <br />
               </span>
               <p className="footer__policy">
                 <span>Все права защищены.</span>
-                <a href="/" target="_blank">
+                <a
+                  // eslint-disable-next-line max-len
+                  href="/Politika_v_otnoshenii_obrabotki_personalnykh_dannykh_IT-park.pdf"
+                  target="_blank">
                   Политика конфиденциальности
                 </a>
               </p>
             </div>
             <div>
-              <p className="footer__client">
-                <span>Клиентский отдел</span>
-                {mail && <a href={`mailto:${mail}`}>{mail}</a>}
-              </p>
-              <p className="footer__career">
-                <span>Карьера в компании</span>
-                <a href="/" target="_blank">
-                  hr@it-park.com
-                </a>
-              </p>
+              {clientMail && (
+                <p className="footer__client">
+                  <span>Клиентский отдел</span>
+                  <a href={`mailto:${clientMail}`}>{clientMail}</a>
+                </p>
+              )}
+              {careerMail && (
+                <p className="footer__career">
+                  <span>Карьера в компании</span>
+                  <a href={`mailto:${careerMail}`}>{careerMail}</a>
+                </p>
+              )}
               <ul className="footer__socials">
                 <li>
                   <a href="/" target="_blank">

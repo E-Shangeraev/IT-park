@@ -2,8 +2,8 @@ const AdminBro = require('admin-bro')
 
 /** @type {AdminBro.ResourceOtions} */
 const options = {
-  listProperties: ['phone', 'mail'],
-  editProperties: ['phone', 'mail'],
+  listProperties: ['phone', 'clientMail', 'careerMail'],
+  editProperties: ['phone', 'clientMail', 'careerMail'],
   navigation: {
     icon: 'Bullhorn',
   },

@@ -70,7 +70,8 @@ const options = {
         Contacts: {
           properties: {
             phone: 'Номер телефона',
-            mail: 'Почта',
+            clientMail: 'Клиентский отдел',
+            careerMail: 'Карьера в компании',
           },
         },
       },
