@@ -22,18 +22,14 @@
   margin-top: 65px;
 
   li {
+    display: flex;
+    align-items: center;
+    padding: 5% 8%;
     transition: ease 0.35s;
+    background-color: $gray-3;
 
     a {
-      display: flex;
-      flex-direction: column;
-      padding: 15% 9%;
-      height: 100%;
-      background-color: $gray-3;
-    }
-    img {
-      align-self: start;
-      margin-bottom: 45px;
+      width: 100%;
     }
     p {
       margin-top: auto;
@@ -82,12 +78,11 @@
   }
 }
 @media (max-width: 600px) {
-  .partners__list li {
-    a {
+  .partners__list {
+    grid-template-columns: 1fr;
+
+    li {
       padding: 25px;
-    }
-    img {
-      margin-bottom: 25px;
     }
   }
 }
