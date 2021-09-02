@@ -5,6 +5,10 @@ import classNames from 'classnames'
 import SliderButton from '@components/SliderButton/SliderButton'
 import './AboutSlider.scss'
 import image1 from '@assets/img/Slider/1.jpg'
+import image2 from '@assets/img/Slider/2.jpg'
+import image3 from '@assets/img/Slider/3.jpg'
+import image4 from '@assets/img/Slider/4.jpg'
+import image5 from '@assets/img/Slider/5.jpg'
 
 export const switchers = [
   'Комфортные рабочие места',
@@ -47,42 +51,37 @@ const AboutSlider = () => {
     <div className="about-slider">
       <Slick className="first" ref={firstSliderRef} {...settings}>
         <img src={image1} alt="Комфортные рабочие места" />
-        <img src={image1} alt="Комфортные рабочие места" />
-        <img src={image1} alt="Комфортные рабочие места" />
-        <img src={image1} alt="Комфортные рабочие места" />
-        <img src={image1} alt="Комфортные рабочие места" />
+        <img src={image2} alt="Зона отдыха" />
+        <img src={image3} alt="Конференц-зал" />
+        <img src={image4} alt="2 комнаты для проведения переговоров" />
+        <img src={image5} alt="Кухня" />
       </Slick>
       <div className="about-slider__bottom">
         <Slick className="second" ref={secondSliderRef} {...settings} fade>
           <p className="second__slide">
-            <b>ИТ-парк Сахалин </b>– это первая на острове деловая
-            бизнес-инфраструктура, которая создает все необходимые условия для
-            развития и поддержки стартап-проектов и ИТ-компаний на всех этапах
-            развития: от идеи до внедрения конечного высокотехнологичного
-            продукта на рынок.
+            <b>Комфортные рабочие мета</b> в ИТ-парке — это не просто удобное
+            кресло, но и наличие необходимого оборудования, чтобы ничего не
+            отвлекало вас от рабочего процесса.
           </p>
           <p className="second__slide">
-            <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit.
-            Tempora accusamus placeat magnam dolores hic? Laborum ad
-            exercitationem nemo error voluptates. Totam porro nobis labore illo?
-            Facere beatae quam omnis eligendi?
+            Для высокой продуктивности и новых свершений важно не только усердно
+            работать, но и правильно отдыхать. В ИТ-парке создана{' '}
+            <b>зона отдыха</b>, где вы сможете отвлечься от работы и попить
+            кофе.
           </p>
           <p className="second__slide">
-            <b>Lorem ipsum dolor</b>, sit amet consectetur adipisicing elit.
-            Ipsum nihil asperiores cumque, ex optio nisi suscipit illo culpa
-            consequatur beatae ipsa! Natus, rerum illo aut eum, eveniet itaque
-            autem quos explicabo enim dolore aliquid assumenda error voluptatem
-            iste qui sunt?
+            Просторный <b>конференц зал</b> позволяет проводить мероприятия для
+            большого количества людей. Подходит для проведения как деловых, так
+            и неформальных мероприятий.
           </p>
           <p className="second__slide">
-            <b>Lorem</b> ipsum dolor, sit amet consectetur adipisicing elit.
-            Ipsum nihil asperiores cumque, ex optio nisi suscipit illo culpa
-            consequatur beatae ipsa! Natus, rerum?
+            Если вам нужно пространство, чтобы перевести переговоры со своими
+            клиентами, ИТ-парк с радостью предоставит его.{' '}
+            <b>Две комнаты разного формата для переговоров</b> к вашим услугам.
           </p>
           <p className="second__slide">
-            <b>Lorem ipsum dolor</b>, sit amet consectetur adipisicing elit.
-            Ipsum nihil asperiores cumque, ex optio nisi suscipit illo culpa
-            consequatur beatae ipsa!
+            Чтобы вас ничего не отвлекало от работы, в ИТ-парке есть{' '}
+            <b>собственная кухня</b>, где вы можете спокойно пообедать.
           </p>
         </Slick>
         <div className="about-slider__buttons">

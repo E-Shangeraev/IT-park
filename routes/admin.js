@@ -13,28 +13,28 @@ const { Admin } = require('../models/Admin')
  * @return {express.Router} router
  */
 const buildAdminRouter = admin => {
-  const router = buildRouter(admin)
-  // const router = buildAuthenticatedRouter(
-  //   admin,
-  //   {
-  //     cookieName: 'admin-bro',
-  //     cookiePassword: 'superlongandcomplicatedname',
-  //     authenticate: async (login, password) => {
-  //       const user = await Admin.findOne({ login })
+  // const router = buildRouter(admin)
+  const router = buildAuthenticatedRouter(
+    admin,
+    {
+      cookieName: 'admin-bro',
+      cookiePassword: 'superlongandcomplicatedname',
+      authenticate: async (login, password) => {
+        const user = await Admin.findOne({ login })
 
-  //       if (user && (await argon2.verify(user.encryptedPassword, password))) {
-  //         return user
-  //       }
-  //       return false
-  //     },
-  //   },
-  //   null,
-  //   {
-  //     resave: false,
-  //     saveUninitialized: true,
-  //     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-  //   }
-  // )
+        if (user && (await argon2.verify(user.encryptedPassword, password))) {
+          return user
+        }
+        return false
+      },
+    },
+    null,
+    {
+      resave: false,
+      saveUninitialized: true,
+      store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+    },
+  )
   return router
 }
 
