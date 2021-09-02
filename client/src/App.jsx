@@ -265,7 +265,7 @@ function App() {
                 <li>
                   <a
                     // eslint-disable-next-line max-len
-                    href="https://vk.com/away.php?utf=1&to=https%3A%2F%2Finstagram.com%2Fit_park_sakhalin%3Futm_medium%3Dcopy_link"
+                    href="https://www.instagram.com/it_park_sakhalin/"
                     target="_blank"
                     rel="noreferrer">
                     <img src={inst} alt="Instagram" />
