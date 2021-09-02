@@ -217,9 +217,6 @@ function App() {
               />
             </div>
             <div>
-              <span className="footer__inn">
-                ООО “ИТ-парк” ИНН 000000000000
-              </span>
               <span className="footer__address">
                 г. Южно-Сахалинск
                 <br />
