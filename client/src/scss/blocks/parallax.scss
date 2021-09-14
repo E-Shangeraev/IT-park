@@ -1,14 +1,13 @@
 .parallax {
   width: 100%;
-  // height: auto;
   background-image: url('../../assets/img/1.jpg');
   background-position: top;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
-  // background-color: $gray-3;
 
   img {
+    width: 100%;
     visibility: hidden;
     object-position: top;
     object-fit: cover;
