@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Title from '@components/Title/Title'
 import AboutSlider from '@components/AboutSlider/AboutSlider'
 import Services from '@components/Services/Services'
@@ -7,29 +7,14 @@ import Feedback from '@components/Feedback/Feedback'
 import Modal from '@components/Modal/Modal'
 import ModalFeedback from '@components/Modal/ModalFeedback'
 import PartnersList from '@components/PartnersList'
+import Footer from '@components/Footer/Footer'
 import logo from '@assets/img/logo.svg'
 import parallax from '@assets/img/1.jpg'
 import icon1 from '@assets/img/icons/1.svg'
 import icon2 from '@assets/img/icons/2.svg'
 import icon3 from '@assets/img/icons/3.svg'
-import footerLogo from '@assets/img/footer-logo.svg'
-import vk from '@assets/img/icons/vk.svg'
-import inst from '@assets/img/icons/inst.svg'
-import youtube from '@assets/img/icons/youtube.svg'
-import whatsapp from '@assets/img/icons/whatsapp.svg'
 
 function App() {
-  const [phone, setPhone] = useState(null)
-  const [clientMail, setClientMail] = useState(null)
-  const [careerMail, setCareerMail] = useState(null)
-
-  useEffect(async () => {
-    const contacts = await fetch('/api/contacts').then(data => data.json())
-    setPhone(contacts[0].phone)
-    setClientMail(contacts[0].clientMail)
-    setCareerMail(contacts[0].careerMail)
-  }, [])
-
   return (
     <div className="App">
       <header className="header">
@@ -172,96 +157,7 @@ function App() {
         </section>
         <Feedback />
       </main>
-      <footer className="footer">
-        <div className="wrapper">
-          <div className="footer__container">
-            <div>
-              <nav className="footer__nav">
-                <ul>
-                  <li>
-                    <a href="#1">Об ИТ-парке</a>
-                  </li>
-                  <li>
-                    <a href="#2">Наши услуги</a>
-                  </li>
-                  <li>
-                    <a href="#3">Партнеры</a>
-                  </li>
-                </ul>
-              </nav>
-              <img
-                className="footer__logo"
-                src={footerLogo}
-                alt="Логотип IT-парк"
-              />
-            </div>
-            <div>
-              <span className="footer__address">
-                г. Южно-Сахалинск
-                <br />
-                ул. Алексея Горького 25
-                {phone && (
-                  <>
-                    <br />
-                    <a href={`tel:${phone}`}>тел: {phone}</a>
-                  </>
-                )}
-                пн-пт с 9:00 до 19:00
-                <br />
-              </span>
-              <p className="footer__policy">
-                <span>Все права защищены.</span>
-                <a
-                  // eslint-disable-next-line max-len
-                  href="/Politika_v_otnoshenii_obrabotki_personalnykh_dannykh_IT-park.pdf"
-                  target="_blank">
-                  Политика конфиденциальности
-                </a>
-              </p>
-            </div>
-            <div>
-              {clientMail && (
-                <p className="footer__client">
-                  <span>Клиентский отдел</span>
-                  <a href={`mailto:${clientMail}`}>{clientMail}</a>
-                </p>
-              )}
-              {careerMail && (
-                <p className="footer__career">
-                  <span>Карьера в компании</span>
-                  <a href={`mailto:${careerMail}`}>{careerMail}</a>
-                </p>
-              )}
-              <ul className="footer__socials">
-                <li>
-                  <a href="/" target="_blank">
-                    <img src={vk} alt="ВКонтакте" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    // eslint-disable-next-line max-len
-                    href="https://www.instagram.com/it_park_sakhalin/"
-                    target="_blank"
-                    rel="noreferrer">
-                    <img src={inst} alt="Instagram" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" target="_blank">
-                    <img src={youtube} alt="YouTube" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" target="_blank">
-                    <img src={whatsapp} alt="WhatsApp" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

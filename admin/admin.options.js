@@ -40,9 +40,11 @@ const options = {
         },
         Contacts: {
           properties: {
+            address: 'Адрес',
             phone: 'Номер телефона',
             clientMail: 'Клиентский отдел',
             careerMail: 'Карьера в компании',
+            workTime: 'Рабочее время',
           },
         },
         Partners: {
