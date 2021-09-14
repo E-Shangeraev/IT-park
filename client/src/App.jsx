@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '@components/Header/Header'
 import Title from '@components/Title/Title'
 import AboutSlider from '@components/AboutSlider/AboutSlider'
 import Services from '@components/Services/Services'
@@ -8,7 +9,6 @@ import Modal from '@components/Modal/Modal'
 import ModalFeedback from '@components/Modal/ModalFeedback'
 import PartnersList from '@components/PartnersList'
 import Footer from '@components/Footer/Footer'
-import logo from '@assets/img/logo.svg'
 import parallax from '@assets/img/1.jpg'
 import icon1 from '@assets/img/icons/1.svg'
 import icon2 from '@assets/img/icons/2.svg'
@@ -17,33 +17,7 @@ import icon3 from '@assets/img/icons/3.svg'
 function App() {
   return (
     <div className="App">
-      <header className="header">
-        <div>
-          <img className="header__logo" src={logo} alt="Логотип IT-парк" />
-        </div>
-        <nav className="header__nav">
-          <ul>
-            <li>
-              <a href="#1">О нас</a>
-            </li>
-            <li>
-              <a href="#2">Услуги</a>
-            </li>
-            <li>
-              <a href="#3">Партнеры</a>
-            </li>
-          </ul>
-        </nav>
-        <div>
-          <Modal btnText="Обратный звонок" btnOutlined>
-            <ModalFeedback
-              title="IT-парк на связи"
-              text="Оставьте свои контактные данные
-              и мы обязательно свяжемся с вами"
-            />
-          </Modal>
-        </div>
-      </header>
+      <Header />
       <main>
         <h1 className="visually-hidden">IT-парк</h1>
         <section className="promo">
