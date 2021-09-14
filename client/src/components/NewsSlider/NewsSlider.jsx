@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import Slick from 'react-slick'
 import { v4 as uuidv4 } from 'uuid'
+import { Markup } from 'interweave'
 import SliderButton from '@components/SliderButton/SliderButton'
 import './NewsSlider.scss'
 
@@ -37,14 +38,10 @@ const NewsSlider = () => {
     ],
   }
 
-  useEffect(async () => {
-    try {
-      const data = await fetch('/api/news').then(response => response.json())
-      setItems(prevState => [...prevState, ...data])
-    } catch (error) {
-      console.log(error)
-      throw new Error(error.message)
-    }
+  useEffect(() => {
+    fetch('/api/news')
+      .then(response => response.json())
+      .then(data => setItems(prevState => [...prevState, ...data]))
   }, [])
 
   return (
@@ -59,7 +56,9 @@ const NewsSlider = () => {
                 alt={slide.title}
               />
               <h4 className="news-slider__title">{slide.title}</h4>
-              <p className="news-slider__text">{slide.text}</p>
+              <div className="news-slider__text">
+                <Markup content={slide.text} />
+              </div>
               <time className="news-slider__date" dateTime={slide.date}>
                 {new Date(slide.date).toLocaleDateString('ru-RU')}
               </time>

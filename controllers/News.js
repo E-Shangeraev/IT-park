@@ -7,7 +7,9 @@ class NewsController {
       let items = await News.find()
       items = items.map(item => {
         const copy = Object.assign({}, item._doc)
-        copy.image = process.env.AWSURI + item.uploadedFile.path
+        copy.image = item.uploadedFile
+          ? process.env.AWSURI + item.uploadedFile.path
+          : null
         return copy
       })
       res.status(200).json(items)

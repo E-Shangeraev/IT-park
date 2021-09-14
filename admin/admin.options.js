@@ -1,41 +1,11 @@
-const { default: AdminBro } = require('admin-bro')
-const AdminBroMongoose = require('@admin-bro/mongoose')
-const uploadFeature = require('@admin-bro/upload')
-require('dotenv').config()
+const { default: AdminJS } = require('adminjs')
+const AdminJSMongoose = require('@adminjs/mongoose')
 
-const { Admin } = require('./resourceOptions')
-const NewsOptions = require('./resourceOptions')
-const News = require('../models/News')
-const Contacts = require('../models/Contacts')
-const ContactsOptions = require('./resourceOptions')
+const { Admin, News, Contacts } = require('./resourceOptions')
 
-const region = process.env.AWSRegion
-const bucket = process.env.AWSBucket
-const secretAccessKey = process.env.AWSSecretAccessKey
-const accessKeyId = process.env.AWSAccessKeyID
+AdminJS.registerAdapter(AdminJSMongoose)
 
-const features = [
-  uploadFeature({
-    provider: {
-      aws: { region, bucket, secretAccessKey, accessKeyId, expires: 0 },
-    },
-    properties: {
-      filename: 'uploadedFile.filename',
-      file: 'uploadedFile',
-      key: 'uploadedFile.path',
-      bucket: 'uploadedFile.folder',
-      size: 'uploadedFile.size',
-      mimeType: 'mimeType',
-    },
-    validation: {
-      mimeTypes: ['image/png', 'image/jpg', 'image/jpeg'],
-    },
-  }),
-]
-
-AdminBro.registerAdapter(AdminBroMongoose)
-
-/** @type {import('admin-bro').AdminBroOptions} */
+/** @type {import('adminjs').AdminJSOptions} */
 const options = {
   locale: {
     language: 'rus',
@@ -77,11 +47,7 @@ const options = {
       },
     },
   },
-  resources: [
-    Admin,
-    { resource: News, options: NewsOptions, features },
-    { resource: Contacts, options: ContactsOptions },
-  ],
+  resources: [Admin, News, Contacts],
   branding: {
     companyName: 'IT-парк',
     logo: '',

@@ -2,7 +2,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
-const { default: AdminBro } = require('admin-bro')
+const AdminJS = require('adminjs')
 const options = require('./admin/admin.options')
 require('dotenv').config()
 
@@ -17,7 +17,7 @@ const {
 } = require('./routes')
 
 // ==== Admin options ====
-const admin = new AdminBro(options)
+const admin = new AdminJS(options)
 const adminRouter = buildAdminRouter(admin)
 
 // ==== Middlewares ====

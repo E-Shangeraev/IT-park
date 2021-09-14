@@ -1,19 +1,24 @@
-const AdminBro = require('admin-bro')
+const AdminJS = require('adminjs')
+const NewsModel = require('../../models/News')
+const features = require('../features')
 
-/** @type {AdminBro.ResourceOtions} */
+/** @type {AdminJS.ResourceOptions} */
 const options = {
   listProperties: ['title', 'text', 'date', 'uploadedFile'],
   editProperties: ['title', 'text', 'date', 'uploadedFile'],
   navigation: {
     icon: 'Bullhorn',
   },
-  parent: {
-    name: 'Администрирование',
-    icon: 'UserAdmin',
-  },
   properties: {
-    mimeType: { isVisible: true },
+    mimeType: { isVisible: false },
+    text: {
+      type: 'richtext',
+    },
   },
 }
 
-module.exports = options
+module.exports = {
+  options,
+  resource: NewsModel,
+  features,
+}

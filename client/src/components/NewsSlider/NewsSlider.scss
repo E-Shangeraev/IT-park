@@ -3,6 +3,9 @@
 .news-slider {
   margin-top: 65px;
 
+  .slick-slider {
+    user-select: initial !important;
+  }
   .slick-track {
     display: grid;
     grid-auto-columns: auto;
@@ -33,6 +36,11 @@
   font-size: 16px;
   line-height: 160%;
   color: $gray-2;
+
+  a {
+    color: $orange;
+    text-decoration: underline;
+  }
 }
 .news-slider__date {
   margin-top: auto;
