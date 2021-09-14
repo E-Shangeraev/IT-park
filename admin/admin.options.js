@@ -1,7 +1,7 @@
 const { default: AdminJS } = require('adminjs')
 const AdminJSMongoose = require('@adminjs/mongoose')
 
-const { Admin, News, Contacts } = require('./resourceOptions')
+const { Admin, News, Contacts, Partners } = require('./resourceOptions')
 
 AdminJS.registerAdapter(AdminJSMongoose)
 
@@ -23,6 +23,7 @@ const options = {
         Admin: 'Администраторы',
         News: 'Новости',
         Contacts: 'Контактные данные',
+        Partners: 'Партнеры',
       },
       buttons: {
         filter: 'Фильтр',
@@ -44,10 +45,18 @@ const options = {
             careerMail: 'Карьера в компании',
           },
         },
+        Partners: {
+          properties: {
+            index: 'Порядковый номер',
+            name: 'Название компании',
+            url: 'URL',
+            uploadedFile: 'Логотип партнера',
+          },
+        },
       },
     },
   },
-  resources: [Admin, News, Contacts],
+  resources: [Admin, News, Contacts, Partners],
   branding: {
     companyName: 'IT-парк',
     logo: '',

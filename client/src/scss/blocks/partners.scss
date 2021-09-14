@@ -22,14 +22,16 @@
   margin-top: 65px;
 
   li {
-    display: flex;
-    align-items: center;
-    padding: 5% 8%;
     transition: ease 0.35s;
     background-color: $gray-3;
 
     a {
+      display: flex;
+      align-items: center;
+      padding: 5% 8%;
       width: 100%;
+      transition: ease 0.25s;
+      filter: opacity(0.7) saturate(0);
     }
     p {
       margin-top: auto;
@@ -38,6 +40,10 @@
     }
     &:hover {
       transform: translateY(-3%);
+
+      a {
+        filter: none;
+      }
     }
   }
 }

@@ -13,7 +13,8 @@ const {
   buildAdminRouter,
   mailRouter,
   newsRouter,
-  contactsController,
+  contactsRouter,
+  partnerRouter,
 } = require('./routes')
 
 // ==== Admin options ====
@@ -27,7 +28,8 @@ app.use(express.json({ extended: true }))
 app.use(admin.options.rootPath, adminRouter)
 app.use('/api/mail', mailRouter)
 app.use('/api/news', newsRouter)
-app.use('/api/contacts', contactsController)
+app.use('/api/contacts', contactsRouter)
+app.use('/api/partners', partnerRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {

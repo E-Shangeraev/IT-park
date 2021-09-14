@@ -6,13 +6,12 @@ import NewsSlider from '@components/NewsSlider/NewsSlider'
 import Feedback from '@components/Feedback/Feedback'
 import Modal from '@components/Modal/Modal'
 import ModalFeedback from '@components/Modal/ModalFeedback'
+import PartnersList from '@components/PartnersList'
 import logo from '@assets/img/logo.svg'
 import parallax from '@assets/img/1.jpg'
 import icon1 from '@assets/img/icons/1.svg'
 import icon2 from '@assets/img/icons/2.svg'
 import icon3 from '@assets/img/icons/3.svg'
-import partnerLogo1 from '@assets/img/2.png'
-import partnerLogo2 from '@assets/img/3.png'
 import footerLogo from '@assets/img/footer-logo.svg'
 import vk from '@assets/img/icons/vk.svg'
 import inst from '@assets/img/icons/inst.svg'
@@ -158,27 +157,7 @@ function App() {
               <span>которые способствуют</span>
               <span>нашему развитию</span>
             </Title>
-            <ul className="partners__list">
-              <li>
-                <a
-                  href="https://sakhalin.gov.ru/"
-                  target="_blank"
-                  rel="noreferrer">
-                  <img
-                    src={partnerLogo1}
-                    alt="Правительство Сахалинской области"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="https://korpso.ru/" target="_blank" rel="noreferrer">
-                  <img
-                    src={partnerLogo2}
-                    alt="Корпорация развития Сахалинской области"
-                  />
-                </a>
-              </li>
-            </ul>
+            <PartnersList />
           </div>
         </section>
         <section className="news">

@@ -1,11 +1,13 @@
 const buildAdminRouter = require('./admin')
 const mailRouter = require('./mail')
 const newsRouter = require('./news')
-const contactsController = require('./contacts')
+const contactsRouter = require('./contacts')
+const partnerRouter = require('./partners')
 
 module.exports = {
   buildAdminRouter,
   mailRouter,
   newsRouter,
-  contactsController,
+  contactsRouter,
+  partnerRouter,
 }
