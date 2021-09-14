@@ -36,20 +36,20 @@ function App() {
       <header className="header">
         <div>
           <img className="header__logo" src={logo} alt="Логотип IT-парк" />
-          <nav className="header__nav">
-            <ul>
-              <li>
-                <a href="#1">О нас</a>
-              </li>
-              <li>
-                <a href="#2">Услуги</a>
-              </li>
-              <li>
-                <a href="#3">Партнеры</a>
-              </li>
-            </ul>
-          </nav>
         </div>
+        <nav className="header__nav">
+          <ul>
+            <li>
+              <a href="#1">О нас</a>
+            </li>
+            <li>
+              <a href="#2">Услуги</a>
+            </li>
+            <li>
+              <a href="#3">Партнеры</a>
+            </li>
+          </ul>
+        </nav>
         <div>
           <Modal btnText="Обратный звонок" btnOutlined>
             <ModalFeedback
