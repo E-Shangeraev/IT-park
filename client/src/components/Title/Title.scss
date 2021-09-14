@@ -15,9 +15,6 @@
     position: relative;
     white-space: nowrap;
   }
-  span:nth-of-type(2) {
-    left: 6%;
-  }
   &--aura::before {
     position: absolute;
     content: '';
@@ -25,8 +22,6 @@
     left: 0;
     width: 6.8em;
     height: 6.8em;
-    // opacity: 0.5;
-    // transform: translate(-50%, -40%);
     border-radius: 50%;
     background: radial-gradient($orange 1%, transparent 50%) no-repeat;
     z-index: -1;
@@ -36,7 +31,6 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
-    // animation-direction: alternate-reverse;
   }
 }
 
