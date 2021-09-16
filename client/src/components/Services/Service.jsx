@@ -53,9 +53,9 @@ const Service = ({ name, description }) => {
         </p>
         <Modal btnText="Обратный звонок">
           <ModalFeedback
-            title="Это модальное окно"
-            text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Sint eius minima consequuntur suscipit quaerat incidunt."
+            title="IT-парк на связи"
+            text="Оставьте свои контактные данные и мы обязательно
+            свяжемся с вами"
           />
         </Modal>
       </div>
