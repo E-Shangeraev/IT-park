@@ -8,17 +8,19 @@ class Mail {
       throw new Error('Отсутствует тело запроса')
     }
     const mailBody = this.createMailBody(body)
-    const mailOption = body.areaName
-      ? this.createMailOption(mailBody, 'СахГУ — Заявка на поступление')
-      : this.createMailOption(mailBody, 'СахГУ')
+    const mailOption = this.createMailOption(
+      mailBody,
+      body.mailTo,
+      'IT-парк — Новая заявка с сайта!',
+    )
     const mailTransport = this.createMailTransport()
 
     return await mailTransport.sendMail(mailOption)
   }
-  createMailOption(data, subject) {
+  createMailOption(data, mailTo, subject) {
     const mailOption = {
       from: `<${process.env.MAIL_LOGIN}>`,
-      to: 'itpark@korpso.ru',
+      to: mailTo,
       subject: subject,
       html: data,
     }
@@ -76,7 +78,7 @@ class Mail {
               style="
                 position: relative;
                 width: 100%;
-                background-color: #ffad0d;
+                background-color: #F48120;
                 border-bottom: 1px solid #888;
                 box-sizing: border-box;
                 padding: 20px;
@@ -87,14 +89,14 @@ class Mail {
                 style="width: 100%; text-align: center; margin-bottom: 30px"
               >
                 <a
-                  href="http://abiturient.sakhgu.ru"
+                  href="http://itpark-sakhalin.ru/logo.png"
                   target="_blank"
                   class="logo"
                   style="display: inline-block; width: fit-content; height: 100%"
                 >
                   <img
-                    src="http://abiturient.sakhgu.ru/logo.png"
-                    alt="Логотип СахГУ"
+                    src="http://itpark-sakhalin.ru/logo.png"
+                    alt="Логотип ИТ парка"
                     style="
                       outline: none;
                       text-decoration: none;
@@ -115,15 +117,15 @@ class Mail {
                   class="title"
                   style="margin: 0; font-size: 26px; line-height: 100%; color: #000"
                 >
-                  СахГУ
+                  ИТ парк
                 </h2>
                 <p style="margin: 15px 0; color: #000">
                   Новая заявка с сайта
                   <a
-                    href="http://abiturient.sakhgu.ru"
+                    href="http://itpark-sakhalin.ru"
                     target="_blank"
-                    style="color: #5a4cb0"
-                    >abiturient.sakhgu.ru</a
+                    style="color: #000"
+                    >itpark-sakhalin.ru</a
                   >
                 </p>
               </div>
@@ -136,34 +138,6 @@ class Mail {
                 class="body__list"
                 style="padding: 0; margin: 0; list-style: none"
               >
-                ${
-                  areaName
-                    ? `
-                  <li style="padding: 25px 0; font-size: 14px">
-                    <b
-                      style="
-                        display: inline-block;
-                        width: 130px;
-                        border-right: 1px solid #adadad;
-                      "
-                      >Специальность:</b
-                    >
-                    <span style="padding-left: 15px">${areaName}</span>
-                  </li>
-                  <li style="padding: 25px 0; font-size: 14px">
-                    <b
-                      style="
-                        display: inline-block;
-                        width: 130px;
-                        border-right: 1px solid #adadad;
-                      "
-                      >Код:</b
-                    >
-                    <span style="padding-left: 15px">${areaCode}</span>
-                  </li>
-                  `
-                    : ''
-                }
                 <li style="padding: 25px 0; font-size: 14px">
                   <b
                     style="
@@ -212,7 +186,7 @@ class Mail {
               style="
                 padding: 20px;
                 font-size: 12px;
-                background-color: #ffad0d;
+                background-color: #F48120;
                 border-top: 1px solid #888;
               "
             >

@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
+import { MailContext } from '../../App'
 import Button from '../Button/Button'
 
 const phoneRegExp =
@@ -11,8 +12,9 @@ const phoneRegExp =
 
 const formId = uuidv4()
 
-const ModalFeedback = ({ title, text, areaName, areaCode }) => {
+const ModalFeedback = ({ title, text }) => {
   const [submited, setSubmited] = useState(false)
+  const mailTo = useContext(MailContext)
 
   const validationSchema = yup.object().shape({
     name: yup
@@ -31,7 +33,7 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
 
   return (
     <div className="modal__block">
-      {!submited ? (
+      {!submited && mailTo ? (
         <>
           <h3 className="modal__title">{title}</h3>
           {text && <p className="text modal__text">{text}</p>}
@@ -41,17 +43,16 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
               name: '',
               phone: '',
               agreement: false,
-              areaName,
-              areaCode,
+              mailTo,
             }}
             validateOnBlur
             onSubmit={async (values, { resetForm }) => {
-              // await fetch('/api/mail', {
-              //   method: 'POST',
-              //   headers: { 'Content-Type': 'application/json' },
-              //   body: JSON.stringify(values),
-              // })
-              console.log(values)
+              await fetch('/api/mail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(values),
+              })
+              // itpark@korpso.ru
               resetForm()
               setSubmited(true)
             }}
@@ -170,14 +171,10 @@ const ModalFeedback = ({ title, text, areaName, areaCode }) => {
 ModalFeedback.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string,
-  areaName: PropTypes.string,
-  areaCode: PropTypes.string,
 }
 
 ModalFeedback.defaultProps = {
   text: null,
-  areaName: null,
-  areaCode: null,
 }
 
 export default ModalFeedback

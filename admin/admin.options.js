@@ -42,6 +42,7 @@ const options = {
           properties: {
             address: 'Адрес',
             phone: 'Номер телефона',
+            mail: 'Почта для заявок',
             clientMail: 'Клиентский отдел',
             careerMail: 'Карьера в компании',
             workTime: 'Рабочее время',

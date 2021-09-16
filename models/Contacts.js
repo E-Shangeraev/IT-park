@@ -11,6 +11,7 @@ const SocialSchema = new Schema({
 const ContactsSchema = new Schema({
   address: String,
   phone: String,
+  mail: String,
   clientMail: String,
   workTime: String,
   socials: SocialSchema,
