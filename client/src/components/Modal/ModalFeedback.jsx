@@ -3,7 +3,7 @@ import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
-import { MailContext } from '../../App'
+import { ContactsContext } from '../../App'
 import Button from '../Button/Button'
 
 const phoneRegExp =
@@ -14,7 +14,7 @@ const formId = uuidv4()
 
 const ModalFeedback = ({ title, text }) => {
   const [submited, setSubmited] = useState(false)
-  const mailTo = useContext(MailContext)
+  const contacts = useContext(ContactsContext)
 
   const validationSchema = yup.object().shape({
     name: yup
@@ -33,7 +33,7 @@ const ModalFeedback = ({ title, text }) => {
 
   return (
     <div className="modal__block">
-      {!submited && mailTo ? (
+      {!submited && contacts && contacts.mail ? (
         <>
           <h3 className="modal__title">{title}</h3>
           {text && <p className="text modal__text">{text}</p>}
@@ -43,7 +43,7 @@ const ModalFeedback = ({ title, text }) => {
               name: '',
               phone: '',
               agreement: false,
-              mailTo,
+              mailTo: contacts.mail,
             }}
             validateOnBlur
             onSubmit={async (values, { resetForm }) => {

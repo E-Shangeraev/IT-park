@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import footerLogo from '@assets/img/footer-logo.svg'
 import vk from '@assets/img/icons/vk.svg'
 import inst from '@assets/img/icons/inst.svg'
 import youtube from '@assets/img/icons/youtube.svg'
 import whatsapp from '@assets/img/icons/whatsapp.svg'
 import telegram from '@assets/img/icons/telegram.svg'
+import { ContactsContext } from '../../App'
 
 import './Footer.scss'
 
 const Footer = () => {
-  const [contacts, setContacts] = useState(null)
-
-  useEffect(() => {
-    fetch('/api/contacts')
-      .then(response => response.json())
-      .then(data => setContacts(data))
-  }, [])
+  const contacts = useContext(ContactsContext)
 
   return (
     <footer className="footer">

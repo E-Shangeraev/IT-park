@@ -14,20 +14,20 @@ import icon1 from '@assets/img/icons/1.svg'
 import icon2 from '@assets/img/icons/2.svg'
 import icon3 from '@assets/img/icons/3.svg'
 
-export const MailContext = React.createContext(null)
+export const ContactsContext = React.createContext(null)
 
 function App() {
-  const [mail, setMail] = useState(null)
+  const [contacts, setContacts] = useState(null)
 
   useEffect(() => {
     fetch('/api/contacts')
       .then(response => response.json())
-      .then(data => setMail(data.mail))
-      .catch(() => setMail(null))
+      .then(data => setContacts(data))
+      .catch(() => setContacts(null))
   }, [])
 
   return (
-    <MailContext.Provider value={mail}>
+    <ContactsContext.Provider value={contacts}>
       <div className="App">
         <Header />
         <main>
@@ -147,7 +147,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </MailContext.Provider>
+    </ContactsContext.Provider>
   )
 }
 

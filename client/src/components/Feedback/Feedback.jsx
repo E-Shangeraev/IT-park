@@ -6,7 +6,7 @@ import Title from '@components/Title/Title'
 import Button from '@components/Button/Button'
 import Modal from '@components/Modal/Modal'
 import image from '@assets/img/4.png'
-import { MailContext } from '../../App'
+import { ContactsContext } from '../../App'
 import './Feedback.scss'
 
 const phoneRegExp =
@@ -17,7 +17,7 @@ const formId = uuidv4()
 
 const Feedback = () => {
   const [submited, setSubmited] = useState(false)
-  const mailTo = useContext(MailContext)
+  const contacts = useContext(ContactsContext)
 
   const afterSubmit = () => setSubmited(false)
 
@@ -35,13 +35,13 @@ const Feedback = () => {
   return (
     <section className="feedback">
       <div className="wrapper">
-        {mailTo && (
+        {contacts && contacts.mail && (
           <Formik
             initialValues={{
               name: '',
               phone: '',
               email: '',
-              mailTo,
+              mailTo: contacts.mail,
             }}
             validateOnBlur
             validationSchema={validationSchema}
