@@ -49,6 +49,19 @@ const AboutSlider = () => {
 
   return (
     <div className="about-slider">
+      <ul className="about-slider__switchers">
+        {switchers.map((name, index) => (
+          <li key={name}>
+            <button
+              className={classNames({ active: active === index })}
+              type="button"
+              onClick={() => handleActive(index)}>
+              {name}
+            </button>
+          </li>
+        ))}
+        <li />
+      </ul>
       <Slick className="first" ref={firstSliderRef} {...settings}>
         <img src={image1} alt="Комфортные рабочие места" />
         <img src={image2} alt="Зона отдыха" />
@@ -89,19 +102,6 @@ const AboutSlider = () => {
           <SliderButton next onClick={next} />
         </div>
       </div>
-      <ul className="about-slider__switchers">
-        {switchers.map((name, index) => (
-          <li key={name}>
-            <button
-              className={classNames({ active: active === index })}
-              type="button"
-              onClick={() => handleActive(index)}>
-              {name}
-            </button>
-          </li>
-        ))}
-        <li />
-      </ul>
     </div>
   )
 }
