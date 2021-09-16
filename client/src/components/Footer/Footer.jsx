@@ -4,6 +4,7 @@ import vk from '@assets/img/icons/vk.svg'
 import inst from '@assets/img/icons/inst.svg'
 import youtube from '@assets/img/icons/youtube.svg'
 import whatsapp from '@assets/img/icons/whatsapp.svg'
+import telegram from '@assets/img/icons/telegram.svg'
 
 import './Footer.scss'
 
@@ -69,50 +70,63 @@ const Footer = () => {
               <div>
                 {contacts.clientMail && (
                   <p className="footer__client">
-                    <span>Клиентский отдел</span>
+                    <span>По вопросам сотрудничества:</span>
                     <a href={`mailto:${contacts.clientMail}`}>
                       {contacts.clientMail}
                     </a>
                   </p>
                 )}
-                {contacts.careerMail ? (
-                  <p className="footer__career">
-                    <span>Карьера в компании</span>
-                    <a href={`mailto:${contacts.careerMail}`}>
-                      {contacts.careerMail}
-                    </a>
-                  </p>
-                ) : (
-                  <p className="footer__career">
-                    <span>Карьера в компании</span>
-                    <br />
-                    <span>—</span>
-                  </p>
-                )}
                 <ul className="footer__socials">
-                  <li>
-                    <a href="/" target="_blank">
-                      <img src={vk} alt="ВКонтакте" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.instagram.com/it_park_sakhalin/"
-                      target="_blank"
-                      rel="noreferrer">
-                      <img src={inst} alt="Instagram" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/" target="_blank">
-                      <img src={youtube} alt="YouTube" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/" target="_blank">
-                      <img src={whatsapp} alt="WhatsApp" />
-                    </a>
-                  </li>
+                  {contacts.socials.vk && (
+                    <li>
+                      <a
+                        href={contacts.socials.vk}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={vk} alt="ВКонтакте" />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.socials.instagram && (
+                    <li>
+                      <a
+                        href={contacts.socials.instagram}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={inst} alt="Instagram" />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.socials.youTube && (
+                    <li>
+                      <a
+                        href={contacts.socials.youTube}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={youtube} alt="YouTube" />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.socials.whatsApp && (
+                    <li>
+                      <a
+                        href={contacts.socials.whatsApp}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={whatsapp} alt="WhatsApp" />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.socials.telegram && (
+                    <li>
+                      <a
+                        href={contacts.socials.telegram}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={telegram} alt="Telegram" />
+                      </a>
+                    </li>
+                  )}
                 </ul>
               </div>
             </>

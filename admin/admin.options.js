@@ -45,6 +45,12 @@ const options = {
             clientMail: 'Клиентский отдел',
             careerMail: 'Карьера в компании',
             workTime: 'Рабочее время',
+            socials: 'Ссылки на соцсети',
+            'socials.vk': 'ВКонтакте',
+            'socials.instagram': 'Instagram',
+            'socials.youTube': 'YouTube',
+            'socials.whatsApp': 'WhatsApp',
+            'socials.telegram': 'Telegram',
           },
         },
         Partners: {

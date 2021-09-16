@@ -48,8 +48,12 @@
 }
 .footer__socials {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+
+  li:not(:last-of-type) {
+    margin-right: 7%;
+  }
 }
 .footer__policy a {
   text-decoration: underline;
