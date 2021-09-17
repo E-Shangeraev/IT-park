@@ -123,6 +123,12 @@ const Footer = () => {
                     </li>
                   )}
                 </ul>
+                <p className="footer__made-by">
+                  <span>©2021</span>
+                  <a href="http://mygang.ru" target="_blank" rel="noreferrer">
+                    Made by Gang
+                  </a>
+                </p>
               </div>
             </>
           )}

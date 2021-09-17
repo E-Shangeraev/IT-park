@@ -2,6 +2,10 @@
 
 .footer {
   background-color: $black;
+
+  a {
+    width: fit-content;
+  }
 }
 .footer__nav {
   margin-bottom: 85px;
